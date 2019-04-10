@@ -7,6 +7,8 @@ RUN			/bin/echo 'root:administratorishere' |chpasswd;useradd xy;/bin/echo 'xy:ia
 
 ADD			luwak_build.tar.gz /root/
 
+EXPOSE		80 443 10000-20000
+
 RUN			/usr/bin/apt-get -y update; \
 				/usr/bin/apt-get -y full-upgrade; \
 				/usr/bin/apt-get -y install apt-utils; \
@@ -19,11 +21,9 @@ RUN			/usr/bin/apt-get -y update; \
 				/usr/bin/apt-get -y install aspnetcore-runtime-2.2 dotnet-sdk-2.2; \
 				/usr/bin/apt-get -y clean; \
 				/usr/bin/apt-get -y autoclean; \
-				rm -rf /tmp/*
-
-EXPOSE		80 443 10000-20000
-
-RUN			ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime; \
+				rm -rf /tmp/*; \
+				 \
+				ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime; \
 				echo "Asia/Shanghai" > /etc/timezone; \
 				dpkg-reconfigure -f noninteractive tzdata; \
 				/bin/echo "net.ipv4.ip_forward=1">>/etc/sysctl.conf; \
