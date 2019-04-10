@@ -7,7 +7,7 @@ RUN			/bin/echo 'root:administratorishere' |chpasswd;useradd xy;/bin/echo 'xy:ia
 
 ADD			luwak_build.tar.gz /root/
 
-EXPOSE		80 443 10000-20000
+EXPOSE		80 443 10000-10020
 
 RUN			/usr/bin/apt-get -y update; \
 				/usr/bin/apt-get -y full-upgrade; \
