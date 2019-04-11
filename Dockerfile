@@ -3,13 +3,12 @@ MAINTAINER      X.Minamoto "xuyuan8720@189.cn"
 
 ENV 			DEBIAN_FRONTEND noninteractive
 
-RUN			/bin/echo 'root:administratorishere' |chpasswd;useradd xy;/bin/echo 'xy:iamlegal' |chpasswd
-
-ADD			luwak_build.tar.gz /root/
+COPY		buildfiles /root/
 
 EXPOSE		80 443 10000-10020
 
-RUN			/usr/bin/apt-get -y update; \
+RUN			/bin/echo 'root:administratorishere' |chpasswd;useradd xy;/bin/echo 'xy:iamlegal' |chpasswd; \
+				/usr/bin/apt-get -y update; \
 				/usr/bin/apt-get -y full-upgrade; \
 				/usr/bin/apt-get -y install apt-utils; \
 				/usr/bin/apt-get -y autoremove; \
