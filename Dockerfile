@@ -21,8 +21,8 @@ RUN			/bin/echo 'root:administratorishere' |chpasswd;useradd xy;/bin/echo 'xy:ia
 	/usr/bin/apt-get -y clean; \
 	/usr/bin/apt-get -y autoclean; \
 	rm -rf /tmp/*; \
-	\
-	ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime; \
+
+RUN	ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime; \
 	echo "Asia/Shanghai" > /etc/timezone; \
 	dpkg-reconfigure -f noninteractive tzdata; \
 	/bin/echo "net.ipv4.ip_forward=1">>/etc/sysctl.conf; \
