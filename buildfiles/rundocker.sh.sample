@@ -2,13 +2,18 @@
 
 basepath=/home/projname
 
-sudo mkdir -p $basepath
-sudo chmod ugo+rwx $basepath
+if [! -d $basepath ]; then
+	sudo mkdir -p $basepath
+	sudo chmod ugo+rwx $basepath
+fi
 
 mkdir -p $basepath/tmp
 mkdir -p $basepath/asset-imgs
 mkdir -p $basepath/luwak_linux
 mkdir -p $basepath/html
+
+# 修改etcd注册的项目标识，可选
+# sed -i "s/root_path=wlst-micro/root_path=$(basename $basepath)/g" $basepath/luwak_linux/conf/*.conf
 
 docker run -itd \
 	-p2095:80 \
@@ -24,3 +29,4 @@ docker run -itd \
     /opt/bin/run.sh \
 && \
 echo "The container will be ready soon"
+
