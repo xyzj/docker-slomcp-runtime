@@ -5,7 +5,7 @@ sleep 1
 start-stop-daemon --start -m -p /run/sslrenew.pid --background -d /opt/bin --exec /opt/bin/sslrenew
 sleep 2
 
-cp /opt/bin/default /etc/nginx/sites-available/default
+cp /opt/bin/conf/nginx-default /etc/nginx/sites-available/default
 
 service nginx stop
 sleep 1

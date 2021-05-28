@@ -5,9 +5,9 @@
 import sys
 import os
 import time
-from extsvr import SVR_STOP, SVR_START
+from extsvr import SVR_STOP
 
-default_list = ["back","uas","asset","gis","logger","dm","msgpush","task","uiact","dpwlst","nboam","dpnb"]
+default_list = ["back","uas","asset","gis","logger","dm","msgpush","task","uiact","dpwlst"]
 
 if __name__ == "__main__":
     if len(sys.argv)>1:

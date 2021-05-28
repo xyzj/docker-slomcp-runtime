@@ -33,11 +33,11 @@ SVR_START = {
     "ecms-sh": "start-stop-daemon --start --background -d /opt/bin -m -p /run/ecms-sh.pid --exec /opt/bin/ecms-mod -- -conf=ecms-sh.conf -http=6827 -tcp=6828 -tcpmodule=shld -portable -forcehttp",
     "ecms-cm": "start-stop-daemon --start --background -d /opt/bin -m -p /run/ecms-cm.pid --exec /opt/bin/ecms-mod -- -conf=ecms-cm.conf -http=6827 -tcp=6828 -tcpmodule=cmbased -portable -forcehttp",
     "gis": "start-stop-daemon --start --background -d /opt/bin -m -p /run/gis.pid --exec /opt/bin/gismanager -- -conf=gis.conf -http=6829 -portable -forcehttp",
-    "dm": "start-stop-daemon --start --background -d /opt/bin/datamaintenance -m -p /run/dm.pid --exec /opt/bin/datamaintenance/datamaintenance -- --conf /opt/bin/conf/datamaintenance --log /opt/bin/log/datamaintenance",
-    "uiact": "start-stop-daemon --start --background -d /opt/bin/userinteraction -m -p /run/uiact.pid --exec /opt/bin/userinteraction/userinteraction -- --conf /opt/bin/conf/userinteraction --log /opt/bin/log/userinteraction",
-    "dpwlst": "start-stop-daemon --start --background -d /opt/bin/dataparser-wlst -m -p /run/dpwlst.pid --exec /opt/bin/dataparser-wlst/dataparser-wlst -- --conf /opt/bin/conf/dataparser-wlst --log /opt/bin/log/dataparser-wlst",
-    "dpnb":"start-stop-daemon --start --background -d /opt/bin/dataparser-nbiot -m -p /run/dpnb.pid --exec /opt/bin/dataparser-nbiot/dataparser-nbiot -- --conf /opt/bin/conf/dataparser-nbiot --log /opt/bin/log/dataparser-nbiot",
-    "szmqtt":"start-stop-daemon --start --background -d /opt/bin/mqttmiddlewareforsz -m -p /run/szmqtt.pid --exec /opt/bin/mqttmiddlewareforsz/mqttmiddlewareforsz -- --conf /opt/bin/conf/mqttmiddlewareforsz --log /opt/bin/log/mqttmiddlewareforsz"
+    "dm": "start-stop-daemon --start --background -d /opt/bin/netcore -m -p /run/dm.pid --exec /opt/bin/netcore/datamaintenance -- --conf /opt/bin/conf/datamaintenance --log /opt/bin/log/datamaintenance",
+    "uiact": "start-stop-daemon --start --background -d /opt/bin/netcore -m -p /run/uiact.pid --exec /opt/bin/netcore/userinteraction -- --conf /opt/bin/conf/userinteraction --log /opt/bin/log/userinteraction",
+    "dpwlst": "start-stop-daemon --start --background -d /opt/bin/netcore -m -p /run/dpwlst.pid --exec /opt/bin/netcore/dataparser-wlst -- --conf /opt/bin/conf/dataparser-wlst --log /opt/bin/log/dataparser-wlst",
+    "dpnb":"start-stop-daemon --start --background -d /opt/bin/netcore -m -p /run/dpnb.pid --exec /opt/bin/netcore/dataparser-nbiot -- --conf /opt/bin/conf/dataparser-nbiot --log /opt/bin/log/dataparser-nbiot",
+    "szmqtt":"start-stop-daemon --start --background -d /opt/bin/netcore -m -p /run/szmqtt.pid --exec /opt/bin/netcore/mqttmiddlewareforsz -- --conf /opt/bin/conf/mqttmiddlewareforsz --log /opt/bin/log/mqttmiddlewareforsz"
 }
 
 if __name__ == "__main__":
