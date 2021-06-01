@@ -12,10 +12,8 @@ mkdir -p $basepath/asset-imgs
 mkdir -p $basepath/luwak_linux
 mkdir -p $basepath/html
 
-# 修改etcd注册的项目标识，可选
-# sed -i "s/root_path=wlst-micro/root_path=$(basename $basepath)/g" $basepath/luwak_linux/conf/*.conf
-
-docker run -itd \
+docker run -it --restart=unless-stopped \
+    --name $(basename $basepath) \
 	-p2095:80 \
 	-p2096:443 \
 	-p2097:6819 \
