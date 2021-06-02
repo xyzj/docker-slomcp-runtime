@@ -12,6 +12,8 @@ mkdir -p $basepath/asset-imgs
 mkdir -p $basepath/luwak_linux
 mkdir -p $basepath/html
 
+docker rm -f $(basename $basepath)
+
 docker run -it --restart=unless-stopped \
     --name $(basename $basepath) \
 	-p2095:80 \
