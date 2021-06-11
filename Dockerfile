@@ -11,4 +11,4 @@ RUN	/usr/bin/apt-get -y update; \
 COPY buildfiles /opt/
 
 RUN echo 'export DOTNET_ROOT=/opt/dotnet' >> /root/.bashrc; \
-	echo 'export PATH=$PATH:$DOTNET_ROOT' >> /root/.bashrc
+	echo 'export PATH=$PATH:$DOTNET_ROOT:/opt/bin' >> /root/.bashrc

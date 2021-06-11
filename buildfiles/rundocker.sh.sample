@@ -14,7 +14,7 @@ mkdir -p $basepath/html
 
 docker rm -f $(basename $basepath)
 
-docker run -it --restart=unless-stopped \
+docker run -itd --restart=unless-stopped \
     --name $(basename $basepath) \
 	-p2095:80 \
 	-p2096:443 \

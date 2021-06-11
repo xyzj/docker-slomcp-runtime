@@ -10,6 +10,7 @@ service nginx start
 sleep 1
 
 cd /opt/bin
+./luwakctl init luwak
 ./luwakctl start all -y # 调用启动业务服务的管理程序
 
 /bin/bash # 防止启动后自动退出
